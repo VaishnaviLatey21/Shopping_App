@@ -35,7 +35,7 @@ function Products({ selectedCategory }) {
   }, [selectedCategory]);
 
   const filteredProducts = products.filter(item => {
-    // Filter based on search query
+    // Filter based on search
     const searchMatch = item.title.toLowerCase().includes(search.toLowerCase()) ||
       item.price.toString().includes(search);
 
@@ -45,7 +45,6 @@ function Products({ selectedCategory }) {
       (!categories.Electronics || item.category.name === "Electronics") &&
       (!categories.Shoes || item.category.name === "Shoes");
 
-    // Return true if both conditions are met
     return searchMatch && categoryMatch;
   });
   console.log("Filtered Products:", filteredProducts);
